@@ -4,19 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Danusan Adelio</title>
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="dist/css/style.css" />
-    <!-- Inline Style -->
     <style>
       body {
         font-family: "STIX Two Text", serif;
-        
+      }
+      /* Custom CSS */
+      .carousel-section {
+        position: relative;
+        height: 60vh;
+        background-color: #7b4ca73c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .about-section {
+        padding: 5rem 0;
+        background-color: #17a2b8; /* Ubah warna background sesuai kebutuhan */
+        color: #fff; /* Ubah warna teks sesuai kebutuhan */
       }
     </style>
   </head>
@@ -37,7 +42,7 @@
               <a class="nav-link active" href="#about">ABOUT</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#produk1">PRODUCT</a>
+              <a class="nav-link active" href="#produk">PRODUCT</a>
             </li>
 
             <li class="nav-item">
@@ -53,30 +58,31 @@
         </div>
       </div>
     </nav>
-    <!--  -->
-    <!-- Home Section -->
-    <section class="d-flex align-items-center justify-content-center jumbotron1" style="color: white; height: 93vh">
+
+    <!-- Carousel Section -->
+    <section id="home" class="carousel-section">
       <div class="container text-center">
-        <h1 class="h4 font-weight-bold" style="color: #3a274cca">
-          SELAMAT DATANG DI
-          <span class="display-4 d-block" style="color: #3a274cca">DANUSAN ADELIO</span>
-        </h1>
-        <div class="col-md-6 mx-auto pt-4">
-          <p class="font-weight-medium text-muted h5 mb-4">web jualan makanan dikhususkan untuk menyarankan atau mengeritik penilaian makanan  </p>
-          <a href="#produk1" class="btn btn-primary btn-lg rounded-pill shadow-sm">cek produk</a>
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-left">
+            <h1 class="h4 font-weight-bold" style="color: #3a274cca">
+              SELAMAT DATANG DI
+              <span class="display-4 d-block" style="color: #3a274cca">DANUSAN ADELIO</span>
+            </h1>
+            <p class="font-weight-medium text-muted h5 mb-4">web kritikan dan saran tentang produk yang kami jual</p>
+            <a href="#" class="btn btn-primary btn-lg rounded-pill shadow-sm">Button</a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="pt-5 pb-4 bg-info text-light">
+    <section id="about" class="about-section" style="margin-bottom: 1pc">
       <div class="container text-center">
         <h2 class="h2 font-weight-bold mb-4">TENTANG KAMI</h2>
         <div class="row mt-5">
           <div class="col">
             <h3 class="h4">TUJUAN</h3>
-            <p class="text-muted"> mengeritik atau saran tentanag seputar makanan yang kami jual
-            </p>
+            <p class="text-muted">Kami menyediakan berbagai macam produk terbaik untuk Anda.</p>
           </div>
           <div class="col">
             <h3 class="h4">TENTANG KAMI</h3>
@@ -86,83 +92,84 @@
       </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="produk1" class="py-5 bg-light">
-      <div class="container">
-        <div class="text-center">
-          <h2 class="h2 font-weight-bold mb-4">PRODUK</h2>
-        </div>
- <section class="py-5">
-  <div class="container">
-          <div class="row">
-            <div class="col-md-3">
-              <div class="card mb-4" >
-                <div class="card-img-top bg-secondary"  style="height: 200px;background-image: url('/image/arem arem.jpg'); background-size: cover; background-position: center;"></div>
-                <div class="card-body">
-                  <h5 class="card-title">arem arem</h5>
-                  <p class="card-text">Rp 2.500</p>
-                  <div class="d-flex align-items-center mb-2">
-                    <span class="text-warning">⭐⭐⭐⭐⭐</span>
-                    <span class="text-muted ml-2">(0)</span>
-                  </div>
-                  <a href="product/product1.html" class="btn btn-primary rounded-pill">Lihat detail</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card mb-4">
-                <div class="card-img-top bg-secondary"  style="height: 200px;background-image: url('/image/lemper_bakar.jpg'); background-size: cover; background-position: center;"></div>
-                <div class="card-body">
-                  <h5 class="card-title">lemper bakar</h5>
-                  <p class="card-text">Rp 2.500</p>
-                  <div class="d-flex align-items-center mb-2">
-                    <span class="text-warning">⭐⭐⭐⭐⭐</span>
-                    <span class="text-muted ml-2">(0)</span>
-                  </div>
-                  <a href="product/product2.html" class="btn btn-primary rounded-pill">Lihat detail</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card mb-4">
-                <div class="card-img-top bg-secondary"  style="height: 200px;background-image: url('/image/risol_rogut.jpg'); background-size: cover; background-position: center;"></div>
-                <div class="card-body">
-                  <h5 class="card-title">risol rogut</h5>
-                  <p class="card-text">Rp 2.500</p>
-                  <div class="d-flex align-items-center mb-2">
-                    <span class="text-warning">⭐⭐⭐⭐⭐</span>
-                    <span class="text-muted ml-2">(0)</span>
-                  </div>
-                  <a href="product/product3.html" class="btn btn-primary rounded-pill">Lihat detail</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card mb-4">
-                <div class="card-img-top bg-secondary"  style="height: 200px;background-image: url('/image/sosis_solo.jpeg'); background-size: cover; background-position: center;"></div>
-                <div class="card-body">
-                  <h5 class="card-title">sosis solo</h5>
-                  <p class="card-text">Rp 2.500</p>
-                  <div class="d-flex align-items-center mb-2">
-                    <span class="text-warning">⭐⭐⭐⭐⭐</span>
-                    <span class="text-muted ml-2">(0)</span>
-                  </div>
-                  <a href="product/product4.html" class="btn btn-primary rounded-pill">Lihat detail</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div id="produk" class="container">
+      <h2 class="h2 font-weight-bold mb-4 text-center" style="color: rgb(22, 144, 181)">PRODUK</h2>
 
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img src="/image/arem arem.jpg" class="card-img-top" alt="Arem Arem Image" style="height: 200px; width: 100%; background-image: url('/image/arem arem.jpg'); background-size: cover; background-position: center" />
+            <div class="card-body">
+              <h5 class="card-title">Arem Arem</h5>
+              <p class="card-text">Rp 100,000</p>
+              <div class="d-flex align-items-center mb-2">
+                <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                <span class="text-muted ml-2">(20 reviews)</span>
+              </div>
+              <a href="product/product1.html" class="btn btn-primary rounded-pill">Lihat detail</a>
+            </div>
           </div>
         </div>
+        <!-- Tambahkan item makanan lainnya di sini -->
       </div>
-      <!-- Controls -->
-
     </div>
-  </div>
-</section>
-
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img src="/image/lemper_bakar.jpg" class="card-img-top" alt="Arem Arem Image" style="height: 200px; width: 100%; background-image: url('/image/arem arem.jpg'); background-size: cover; background-position: center" />
+            <div class="card-body">
+              <h5 class="card-title">Arem Arem</h5>
+              <p class="card-text">Rp 100,000</p>
+              <div class="d-flex align-items-center mb-2">
+                <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                <span class="text-muted ml-2">(0 reviews)</span>
+              </div>
+              <a href="product/product2.html" class="btn btn-primary rounded-pill">Lihat detail</a>
+            </div>
+          </div>
+        </div>
+        <!-- Tambahkan item makanan lainnya di sini -->
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img src="/image/risol_rogut.jpg" class="card-img-top" alt="Arem Arem Image" style="height: 200px; width: 100%; background-image: url('/image/arem arem.jpg'); background-size: cover; background-position: center" />
+            <div class="card-body">
+              <h5 class="card-title">Arem Arem</h5>
+              <p class="card-text">Rp 100,000</p>
+              <div class="d-flex align-items-center mb-2">
+                <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                <span class="text-muted ml-2">(0 reviews)</span>
+              </div>
+              <a href="product/product3.html" class="btn btn-primary rounded-pill">Lihat detail</a>
+            </div>
+          </div>
+        </div>
+        <!-- Tambahkan item makanan lainnya di sini -->
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img src="/image/sosis_solo.jpeg" class="card-img-top" alt="Arem Arem Image" style="height: 200px; width: 100%; background-image: url('/image/arem arem.jpg'); background-size: cover; background-position: center" />
+            <div class="card-body">
+              <h5 class="card-title">Arem Arem</h5>
+              <p class="card-text">Rp 100,000</p>
+              <div class="d-flex align-items-center mb-2">
+                <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                <span class="text-muted ml-2">(0 reviews)</span>
+              </div>
+              <a href="product/product4.html" class="btn btn-primary rounded-pill">Lihat detail</a>
+            </div>
+          </div>
+        </div>
+        <!-- Tambahkan item makanan lainnya di sini -->
+      </div>
+    </div>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

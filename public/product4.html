@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      .comment-form {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .comment-item {
+        padding: 10px;
+        border-bottom: 1px solid #e9ecef;
+      }
+      .comment-item:last-child {
+        border-bottom: none;
+      }
+      .comment-item .timestamp {
+        color: #6c757d;
+        font-size: 0.875em;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="/index.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+          </svg>
+        </a>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="card mb-4">
+            <img src="assets/risol_rogut.jpg" class="card-img-top" alt="Risol Rogut" />
+            <div class="card-body">
+              <h5 class="card-title">Risol Rogut</h5>
+              <h5 class="card-title">RP 2.500</h5>
+              <p class="card-text"></p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+
+          <div class="comment-form">
+            <h4>Tambah Komentar</h4>
+            <form id="commentForm">
+              <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="form-control" required />
+              </div>
+              <div class="form-group">
+                <label for="comment">Komentar:</label>
+                <textarea id="comment" name="comment" class="form-control" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Kirim Komentar</button>
+            </form>
+          </div>
+
+          <h4 class="mt-4">Komentar yang Ada</h4>
+          <ul id="commentsList" class="list-unstyled">
+            <!-- Comments will be dynamically added here -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      document.getElementById("commentForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const comment = document.getElementById("comment").value;
+
+        fetch("/add-comment4", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, comment }),
+        })
+          .then((response) => response.text())
+          .then((data) => {
+            alert(data);
+            loadComments();
+          });
+      });
+
+      function loadComments() {
+        fetch("/produk4")
+          .then((response) => response.json())
+          .then((produk4) => {
+            const commentsList = document.getElementById("commentsList");
+            commentsList.innerHTML = "";
+            produk4.forEach((comment) => {
+              const li = document.createElement("li");
+              li.classList.add("comment-item");
+              li.innerHTML = `
+              <strong>${comment.username}</strong>: ${comment.comment}
+              <div class="timestamp">${new Date(comment.created_at).toLocaleString()}</div>
+            `;
+              commentsList.appendChild(li);
+            });
+          });
+      }
+
+      loadComments();
+    </script>
+  </body>
+</html>

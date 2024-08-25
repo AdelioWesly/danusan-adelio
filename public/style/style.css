@@ -1,0 +1,21 @@
+.container .item {
+  display: flex; /* Menggunakan flexbox untuk menata item secara horizontal */
+  overflow-x: scroll; /* Mengaktifkan scroll horizontal */
+  padding: 24px;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 24px;
+  border-radius: 8px;
+  gap: 12px;
+  margin: 2rem auto;
+}
+
+.container .item {
+  flex: 0 0 auto; /* Membuat setiap item tidak menyusut dan tetap diatur secara horizontal */
+  scroll-snap-align: start;
+  min-width: 300px; /* Lebar minimum untuk setiap item */
+  height: 100%; /* Menyesuaikan tinggi item dengan kontainer */
+  background-color: lightgray; /* Warna latar belakang untuk item (opsional) */
+  border-radius: 8px;
+  padding: 16px; /* Padding dalam item (opsional) */
+  box-sizing: border-box; /* Agar padding tidak menambah lebar item */
+}
